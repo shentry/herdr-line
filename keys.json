@@ -1,0 +1,8 @@
+{
+  "global": {
+    "cmd-alt-l": {
+      "command": "mod.open",
+      "args": { "name": "ccline" }
+    }
+  }
+}

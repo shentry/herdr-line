@@ -1,0 +1,35 @@
+{
+  "preset": "cometix-pro",
+  "skin": "plain",
+  "palette": "herdr",
+  "barStyle": "blocks",
+  "barWidth": 10,
+  "dirStyle": "name",
+  "followMode": "smart",
+  "autoSyncHeight": true,
+  "segments": {
+    "agent": true,
+    "model": true,
+    "effort": true,
+    "dir": true,
+    "git": true,
+    "gitDiff": true,
+    "context": true,
+    "contextBar": true,
+    "cache": true,
+    "timing": true,
+    "quota": true,
+    "cost": true,
+    "mode": true,
+    "activity": true,
+    "session": true,
+    "workspace": true
+  },
+  "models": [
+    {
+      "pattern": "kimi-k2",
+      "displayName": "Kimi K2",
+      "window": 256000
+    }
+  ]
+}

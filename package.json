@@ -1,0 +1,34 @@
+{
+  "name": "herdr-ccline",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "MIT",
+  "description": "Herdr-native CCometixLine workspace status bar and multi-agent context collector",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "test:layout": "node --test tests/test_layout.mjs",
+    "test:python": "python3 -B -m unittest discover -s tests -p 'test_*.py' -v",
+    "test": "npm run test:layout && npm run test:python"
+  },
+  "pi": {
+    "extensions": [
+      "extensions/herdr-ccline.ts"
+    ]
+  },
+  "files": [
+    "mods/ccline/main.js",
+    "mods/ccline/layout.js",
+    "mods/ccline/collector.py",
+    "mods/ccline/mod.json",
+    "mods/ccline/jsconfig.json",
+    "mods/ccline/icons/*.svg",
+    "extensions/herdr-ccline.ts",
+    "scripts/install.py",
+    "config.example.json",
+    "keys.json",
+    "RECIPE.md",
+    "README.md"
+  ]
+}

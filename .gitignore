@@ -1,0 +1,45 @@
+# Never commit conversations, runtime state, or installation backups.
+**/runtime/
+**/agents/
+**/snapshots/
+**/backups/
+**/cache/
+*.sqlite3
+*.sqlite3-*
+*.db
+*.db-*
+*.jsonl
+*.tmp
+config.json
+**/.state/
+installed.json
+shared.json
+view.json
+window.json
+keys.local.json
+hooks.local.json
+.env
+.env.*
+
+# Host-generated declarations, dependencies, and test/build artifacts.
+gpui-kit.d.ts
+herdr.d.ts
+gpui-base.d.ts
+mods/ccline/gpui-kit.d.ts
+mods/ccline/herdr.d.ts
+mods/ccline/gpui-base.d.ts
+node_modules/
+__pycache__/
+*.py[cod]
+*.tgz
+coverage/
+.DS_Store
+
+# Additional release-safety exclusions (at any depth).
+**/.config/
+**/cache/
+*.sqlite
+*.sqlite-*
+*.sqlite3*
+*.pem
+*.key

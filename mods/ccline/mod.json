@@ -1,0 +1,16 @@
+{
+  "place": "none",
+  "focusable": false,
+  "overlay": {
+    "width": 780,
+    "height": 640
+  },
+  "palette": [
+    {
+      "title": "CCometixLine: Configure Status Bar",
+      "command": "mod.open",
+      "args": { "name": "ccline" },
+      "words": "ccline statusline cometix agyline context quota theme preset skin"
+    }
+  ]
+}
