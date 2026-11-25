@@ -29,6 +29,8 @@
     "config.example.json",
     "keys.json",
     "RECIPE.md",
-    "README.md"
+    "README.md",
+    "preview.png",
+    "docs/preview.md"
   ]
 }

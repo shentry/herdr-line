@@ -87,4 +87,4 @@ herdr-app check ~/.config/herdr-app/mods/ccline
 
 按 [MIT License](LICENSE) 发布，版权声明为 2026 shentry。
 
-尚未提供经隐私检查的真实界面截图 `preview.png`；未伪造预览图或图片引用。Gallery 收录与真实 Herdr UI / 客户端端到端验收仍需另行确认。
+已提供由 Herdr 原生渲染真实配置器组件的合成数据预览 [preview.png](preview.png)，不是绘制的产品示意图。[截图来源与限制](docs/preview.md)。Gallery 收录与实际客户端端到端验收仍需另行确认。

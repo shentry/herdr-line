@@ -1,6 +1,8 @@
+![Herdr CCometixLine](preview.png)
+
 # Herdr CCometixLine
 
-发布说明：尚未提供经隐私检查的真实 `preview.png`；补图后再添加图片引用，Gallery 收录需另行确认。
+预览图由 Herdr 0.1.18 原生渲染本插件的真实配置器组件生成；画面明确标注合成示例数据，无真实聊天、私人路径或会话 ID。[截图来源与限制](docs/preview.md)。Gallery 收录仍需另行确认。
 
 在 Herdr 工作区底部提供统一的 `CCometixLine` / `agyline` 风格全局 CLI 状态栏，并附带原生可视化配置弹窗。保留每个终端窗格原有的顶部标题栏与各自 CLI 配置不变，自动追踪当前活跃的任意编码 Agent（Claude Code、Codex、Antigravity、Devin、Pi、OMP、Grok 及通用终端）。
 
