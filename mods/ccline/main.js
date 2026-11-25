@@ -1,4 +1,4 @@
-// Herdr-native CCometixLine plugin:
+// Herdr-native Herdr Line plugin:
 //   1. Workspace bottom status bar (auto-tracks any active Agent across tabs/panes)
 //   2. Full interactive Configurator & Live Preview dialog (`mod.open { name: "ccline" }`)
 import { View, div, svg, image } from "gpui-kit";
@@ -37,6 +37,7 @@ import {
   buildStatusModel,
 } from "./layout.js";
 
+// Legacy persisted keys and mod ID are retained for existing installations.
 const CONFIG_KEY = "ccline.config";
 const SNAPSHOT_KEY = "ccline.snapshot";
 
@@ -65,7 +66,7 @@ function looksLikeAgent(paneOrTerm) {
   return /(claude|codex|devin|antigravity|\bagy\b|\bpi\b|\bomp\b|grok|cursor|opencode|kiro|aider)/.test(s);
 }
 
-export default class HerdrCcline extends View {
+export default class HerdrLine extends View {
   init(_props, cx) {
     this.widthPx = 1120;
     this.busy = false;
@@ -485,8 +486,8 @@ export default class HerdrCcline extends View {
     const sampleCollected = snap.collected || {
       adapter: "claude-code",
       source: "preview",
-      sessionId: "ccline-live-preview",
-      cwd: `${home()}/herdr-ccline`,
+      sessionId: "herdr-line-demo-preview",
+      cwd: `${home()}/demo-project`,
       model: { id: "claude-opus-5-5[1m]", displayName: "Opus 5.5 1M", effort: "xHigh", family: "claude", window: 1000000 },
       context: { tokens: 142800, window: 1000000, percent: 14.3, inputTokens: 8200, cacheReadTokens: 134600, outputTokens: 1240 },
       cache: { hitRatio: 94.2, warm: true, expiresAt: Date.now() / 1000 + 262 },
@@ -640,7 +641,7 @@ export default class HerdrCcline extends View {
     const paletteRows = [paletteIds.slice(0, 4), paletteIds.slice(4)];
 
     return v_flex()
-      .id("ccline-configurator")
+      .id("herdr-line-configurator")
       .size_full()
       .bg(t.popover || t.background)
       .text_color(t.foreground)
@@ -659,7 +660,7 @@ export default class HerdrCcline extends View {
               .gap(8)
               .items_center()
               .child(svg("mods/ccline/icons/sliders.svg").size(15).text_color(t.accent))
-              .child(div().text_size(14).font_semibold().child("CCometixLine · Herdr 全局状态栏配置"))
+              .child(div().text_size(14).font_semibold().child("Herdr Line · Herdr 全局状态栏配置"))
           )
           .child(
             h_flex()
@@ -830,7 +831,7 @@ export default class HerdrCcline extends View {
     });
 
     return div()
-      .id("herdr-ccline-bar")
+      .id("herdr-line-bar")
       .size_full()
       .on_size_change((size, cx) => {
         const logicalWidth = Math.round(size.width / zoom);

@@ -9,6 +9,8 @@
 - 临时 demo wrapper 继承本插件，直接调用 `mods/ccline/main.js` 的原始 `renderConfigurator()`，以及未修改的 `layout.js`。**产品组件源码保持逐字节一致**；wrapper 只注入合成状态、禁用真实采集/轮询，并加上 “SYNTHETIC DEMO DATA” 标识。
 - 通过官方 `herdr-app check` 检查原插件和 wrapper，再用 `herdr-app shot preview.png` 导出原生渲染帧；不是桌面/浏览器自动截图。
 
+Herdr Line 的截图已在更名后重新原生渲染，界面、预设名称及标题均使用新品牌。文中的 `mods/ccline/` 是保留的 legacy 安装标识，详见 README 的兼容说明。
+
 ## 示例数据
 
 全部名称、终端编号、token/配额/性能数值和桥接状态均为人为构造的演示 fixture。截图不含真实聊天、私人绝对路径或实际会话 ID；`t1` / `t2` 等仅为合成终端示例，不是用户会话。

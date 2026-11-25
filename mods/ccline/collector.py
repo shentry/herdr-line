@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Zero-intrusion multi-agent status collector and SWR Git cache for Herdr CCometixLine."""
+"""Zero-intrusion multi-agent status collector and SWR Git cache for Herdr Line."""
 import argparse
 from datetime import datetime
 import json

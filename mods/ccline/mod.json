@@ -7,10 +7,12 @@
   },
   "palette": [
     {
-      "title": "CCometixLine: Configure Status Bar",
+      "title": "Herdr Line: Configure Status Bar",
       "command": "mod.open",
-      "args": { "name": "ccline" },
-      "words": "ccline statusline cometix agyline context quota theme preset skin"
+      "args": {
+        "name": "ccline"
+      },
+      "words": "herdr-line line statusline context quota theme preset skin"
     }
   ]
 }

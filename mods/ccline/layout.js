@@ -1,10 +1,11 @@
-// Pure CCometixLine layout, preset, palette, skin, and responsive fit engine.
+// Pure Herdr Line layout, preset, palette, skin, and responsive fit engine.
+// Visual design inspiration: CCometixLine; persisted preset IDs stay compatible.
 // Zero host-module imports so this module runs identically inside Herdr (gpui-kit) and Node tests.
 
 export const PRESETS = [
   {
     id: "cometix-pro",
-    name: "Cometix Pro",
+    name: "Line Pro",
     lines: 2,
     height: 48,
     skin: "plain",
@@ -14,7 +15,7 @@ export const PRESETS = [
   },
   {
     id: "cometix",
-    name: "Cometix Classic",
+    name: "Line Classic",
     lines: 1,
     height: 30,
     skin: "plain",
@@ -928,9 +929,9 @@ export function buildStatusModel({
       priority: 5,
       icon: "mods/ccline/icons/sliders.svg",
       action: "open-config",
-      tooltip: "打开 CCometixLine 可视化配置器 (预设 / 皮肤 / 配色 / 指标开关)",
+      tooltip: "打开 Herdr Line 可视化配置器 (预设 / 皮肤 / 配色 / 指标开关)",
       variants: [
-        { icon: "mods/ccline/icons/sliders.svg", text: "ccline" },
+        { icon: "mods/ccline/icons/sliders.svg", text: "herdr-line" },
         { icon: "mods/ccline/icons/sliders.svg", text: "" },
         { icon: "mods/ccline/icons/sliders.svg", text: "" },
       ],

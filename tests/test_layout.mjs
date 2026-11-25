@@ -1,4 +1,5 @@
 import test from "node:test";
+import { readFileSync } from "node:fs";
 import assert from "node:assert/strict";
 import {
   PRESETS,
@@ -9,7 +10,7 @@ import {
   buildStatusModel,
 } from "../mods/ccline/layout.js";
 
-test("presets and config normalization cover all Cometix modes", () => {
+test("presets and config normalization cover all Herdr Line modes", () => {
   assert.ok(PRESETS.length >= 6);
   const def = normalizeConfig(null);
   assert.equal(def.preset, "cometix-pro");
@@ -26,7 +27,7 @@ test("presets and config normalization cover all Cometix modes", () => {
   assert.equal(dash.lines, 2);
 });
 
-test("token formatting and text bars match CCometixLine style", () => {
+test("token formatting and text bars match Herdr Line style", () => {
   assert.equal(fmtTokens(1000000), "1M");
   assert.equal(fmtTokens(142800), "142.8k");
   assert.equal(fmtTokens(512), "512");
@@ -42,7 +43,7 @@ test("buildStatusModel renders 2-line and shrinks gracefully on narrow widths", 
     adapter: "devin",
     source: "devin-db",
     sessionId: "session-demo-01",
-    cwd: "/example-home/herdr-ccline",
+    cwd: "/example-home/herdr-line",
     model: { id: "swe-2-1-max", displayName: "SWE-2.1 Max", family: "devin", window: 262144 },
     context: { tokens: 104857, window: 262144, percent: 40, cacheReadTokens: 100000 },
     cache: { hitRatio: 95.4, warm: true, expiresAt: Date.now() / 1000 + 200 },
@@ -87,4 +88,17 @@ test("buildStatusModel renders 2-line and shrinks gracefully on narrow widths", 
   assert.equal(narrow.rows.length, 1);
   // High-priority items (agent/model/context/open-config) survive narrow width shrink
   assert.ok(narrow.rows[0].left.length >= 1);
+});
+
+test("Herdr Line branding retains legacy installation and preset interfaces", () => {
+  const pkg = JSON.parse(readFileSync(new URL("../package.json", import.meta.url)));
+  const meta = JSON.parse(readFileSync(new URL("../mods/ccline/mod.json", import.meta.url)));
+  const keys = JSON.parse(readFileSync(new URL("../keys.json", import.meta.url)));
+  assert.equal(pkg.name, "herdr-line");
+  assert.equal(meta.palette[0].title, "Herdr Line: Configure Status Bar");
+  assert.equal(meta.palette[0].args.name, "ccline");
+  assert.equal(keys.global["cmd-alt-l"].args.name, "ccline");
+  assert.equal(PRESETS.find(p => p.id === "cometix-pro").name, "Line Pro");
+  assert.equal(PRESETS.find(p => p.id === "cometix").name, "Line Classic");
+  assert.equal(normalizeConfig({ preset: "cometix" }).preset, "cometix");
 });

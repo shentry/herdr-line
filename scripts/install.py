@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Safe whitelist installer for Herdr CCometixLine plugin.
+"""Safe whitelist installer for Herdr Line plugin.
 
 Never modifies Claude/Antigravity/Codex/Devin CLI settings or read-only shipped Herdr layouts.
 Optionally wires a user's personal cloned layout (--activate-layout <name>) with atomic backup.
@@ -194,7 +194,7 @@ def main(argv=None):
             print(f"Private backup saved to: {backup_root}")
         return 0
     except (OSError, ValueError) as exc:
-        print(f"CCometixLine installation refused: {exc}", file=sys.stderr)
+        print(f"Herdr Line installation refused: {exc}", file=sys.stderr)
         return 1
 
 

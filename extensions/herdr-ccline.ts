@@ -98,7 +98,7 @@ function publish(ctx: ExtensionContext): void {
   });
 }
 
-export default function herdrCclineExtension(pi: ExtensionAPI): void {
+export default function herdrLineExtension(pi: ExtensionAPI): void {
   if (!VALID_TERMINAL) return;
   const emit = (_event: unknown, ctx: ExtensionContext) => {
     try {

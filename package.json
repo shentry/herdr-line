@@ -1,9 +1,9 @@
 {
-  "name": "herdr-ccline",
+  "name": "herdr-line",
   "version": "0.1.0",
   "type": "module",
   "license": "MIT",
-  "description": "Herdr-native CCometixLine workspace status bar and multi-agent context collector",
+  "description": "Herdr Line: native workspace status bar and multi-agent context collector",
   "engines": {
     "node": ">=20.0.0"
   },
@@ -32,5 +32,9 @@
     "README.md",
     "preview.png",
     "docs/preview.md"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shentry/herdr-line.git"
+  }
 }
